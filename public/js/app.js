@@ -3112,6 +3112,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -30500,7 +30516,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                Dashboard\n                            "
+                              "\n                                    Dashboard\n                                "
                             )
                           ]
                         )
@@ -30542,12 +30558,12 @@ var render = function() {
                                                 },
                                                 [
                                                   _vm._v(
-                                                    "\n                                            " +
+                                                    "\n                                                " +
                                                       _vm._s(
                                                         _vm.$page.props.user
                                                           .current_team.name
                                                       ) +
-                                                      "\n\n                                            "
+                                                      "\n\n                                                "
                                                   ),
                                                   _c(
                                                     "svg",
@@ -30600,7 +30616,7 @@ var render = function() {
                                                       },
                                                       [
                                                         _vm._v(
-                                                          "\n                                                Manage Team\n                                            "
+                                                          "\n                                                    Manage Team\n                                                "
                                                         )
                                                       ]
                                                     ),
@@ -30618,7 +30634,7 @@ var render = function() {
                                                       },
                                                       [
                                                         _vm._v(
-                                                          "\n                                                Team Settings\n                                            "
+                                                          "\n                                                    Team Settings\n                                                "
                                                         )
                                                       ]
                                                     ),
@@ -30636,7 +30652,7 @@ var render = function() {
                                                           },
                                                           [
                                                             _vm._v(
-                                                              "\n                                                Create New Team\n                                            "
+                                                              "\n                                                    Create New Team\n                                                "
                                                             )
                                                           ]
                                                         )
@@ -30655,7 +30671,7 @@ var render = function() {
                                                       },
                                                       [
                                                         _vm._v(
-                                                          "\n                                                Switch Teams\n                                            "
+                                                          "\n                                                    Switch Teams\n                                                "
                                                         )
                                                       ]
                                                     ),
@@ -30769,7 +30785,7 @@ var render = function() {
                                   ],
                                   null,
                                   false,
-                                  373511154
+                                  2604020466
                                 )
                               })
                             : _vm._e()
@@ -30825,11 +30841,11 @@ var render = function() {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                            " +
+                                                  "\n                                                " +
                                                     _vm._s(
                                                       _vm.$page.props.user.name
                                                     ) +
-                                                    "\n\n                                            "
+                                                    "\n\n                                                "
                                                 ),
                                                 _c(
                                                   "svg",
@@ -30874,7 +30890,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                                        Manage Account\n                                    "
+                                          "\n                                            Manage Account\n                                        "
                                         )
                                       ]
                                     ),
@@ -30888,7 +30904,7 @@ var render = function() {
                                       },
                                       [
                                         _vm._v(
-                                          "\n                                        Profile\n                                    "
+                                          "\n                                            Profile\n                                        "
                                         )
                                       ]
                                     ),
@@ -30905,7 +30921,7 @@ var render = function() {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                        API Tokens\n                                    "
+                                              "\n                                            API Tokens\n                                        "
                                             )
                                           ]
                                         )
@@ -30931,7 +30947,7 @@ var render = function() {
                                           { attrs: { as: "button" } },
                                           [
                                             _vm._v(
-                                              "\n                                            Logout\n                                        "
+                                              "\n                                                Logout\n                                            "
                                             )
                                           ]
                                         )
@@ -31036,7 +31052,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                        Dashboard\n                    "
+                          "\n                            Dashboard\n                        "
                         )
                       ]
                     )
@@ -31093,7 +31109,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Profile\n                        "
+                              "\n                                Profile\n                            "
                             )
                           ]
                         ),
@@ -31111,7 +31127,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                            API Tokens\n                        "
+                                  "\n                                API Tokens\n                            "
                                 )
                               ]
                             )
@@ -31134,7 +31150,7 @@ var render = function() {
                               { attrs: { as: "button" } },
                               [
                                 _vm._v(
-                                  "\n                                Logout\n                            "
+                                  "\n                                    Logout\n                                "
                                 )
                               ]
                             )
@@ -31156,7 +31172,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                Manage Team\n                            "
+                                    "\n                                    Manage Team\n                                "
                                   )
                                 ]
                               ),
@@ -31174,7 +31190,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                Team Settings\n                            "
+                                    "\n                                    Team Settings\n                                "
                                   )
                                 ]
                               ),
@@ -31189,7 +31205,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                Create New Team\n                            "
+                                    "\n                                    Create New Team\n                                "
                                   )
                                 ]
                               ),
@@ -31206,7 +31222,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                Switch Teams\n                            "
+                                    "\n                                    Switch Teams\n                                "
                                   )
                                 ]
                               ),

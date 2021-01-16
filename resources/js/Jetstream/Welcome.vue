@@ -6,7 +6,10 @@
             </div>
 
             <div class="mt-8 text-2xl">
-                Welcome to your Jetstream application!
+                <pre>
+<!--                    {{ $page }}-->
+                </pre>
+
             </div>
 
         </div>

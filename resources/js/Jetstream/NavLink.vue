@@ -1,12 +1,12 @@
 <template>
-    <inertia-link :href="href" :class="classes">
+    <inertia-link :href="href" :class="classes" v-if="roleOrPermission">
         <slot></slot>
     </inertia-link>
 </template>
 
 <script>
     export default {
-        props: ['href', 'active'],
+        props: ['href', 'active', 'roleOrPermission'],
 
         computed: {
             classes() {
