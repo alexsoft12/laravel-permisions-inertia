@@ -37,8 +37,8 @@ class AppServiceProvider extends ServiceProvider
             Inertia::share([
                 'authUser' => function () {
                     return [
-                        'roles' => Auth::user() != null ? Auth::user()->roles()->pluck('name'): ['aaa'],
-                        'permissions' => Auth::user() != null ? Auth::user()->getPermissionsViaRoles()->pluck('name') : ['bbb'],
+                        'roles' => Auth::user() != null ? Auth::user()->roles()->pluck('name'): [],
+                        'permissions' => Auth::user() != null ? Auth::user()->getPermissionsViaRoles()->pluck('name') : [],
                     ];
                 }
             ]);

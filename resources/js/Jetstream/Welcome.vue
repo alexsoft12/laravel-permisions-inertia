@@ -7,7 +7,8 @@
 
             <div class="mt-8 text-2xl">
                 <pre>
-<!--                    {{ $page }}-->
+                    {{ $page.props.authUser}}
+
                 </pre>
 
             </div>

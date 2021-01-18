@@ -41,7 +41,16 @@
                                               :roleOrPermission="$page.props.authUser.roles.includes('super-admin') ||$page.props.authUser.permissions.includes('module.users')">
                                     Manage users
                                 </jet-nav-link>
+
+                                <jet-nav-link :href="route('roles.index')" :active="route().current('roles')"
+                                              :roleOrPermission="$page.props.authUser.roles.includes('super-admin')
+                                              ||$page.props.authUser.permissions.includes('module.users')">
+                                    Roles
+                                </jet-nav-link>
+
                             </div>
+
+
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">

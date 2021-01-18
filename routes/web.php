@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ManageUserController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -31,10 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::group(['middleware' => ['permission:module.users']], function () {
 
         Route::resource('users', ManageUserController::class);
-        /* Route::get('users', function () {
-             return $users = \App\Models\User::all();
-             // return Inertia::render('User/Index', ['users' => $users]);
-         })->name('user.index');*/
+        Route::resource('roles', RoleController::class);
     });
 
     Route::group(['middleware' => ['permission:module.products']], function () {

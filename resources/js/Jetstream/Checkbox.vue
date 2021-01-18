@@ -26,6 +26,7 @@
                     return this.checked;
                 },
                 set(val) {
+                    //console.log(val)
                     this.$emit("change", val);
                 },
             },
