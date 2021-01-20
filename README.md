@@ -3,7 +3,10 @@
 
 ## system users 
 
-## Manejo de permisos y roles de usuario 
+## Management of user roles and permissions
 
 - This project is educational, I am sure it can be improved a lot.
 -  If you want to try this project run the commands migrations and seeders
+- Demo credencial
+    - user: admin@exaple.com
+    - pass: password
