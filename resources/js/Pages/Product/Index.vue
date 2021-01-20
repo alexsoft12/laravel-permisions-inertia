@@ -7,11 +7,18 @@
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                   <pre>
-                       {{ products}}
-                   </pre>
+                    <div class="m-4">
+                    <dt class="text-lg leading-6 font-medium text-gray-900 bg-blue-200 rounded">
+                        Description  - Price
+                    </dt>
+                    </div>
+                    <div class="m-4" v-for="product in products" :key="product.id">
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            {{ product.name}} x {{ product.unit }}  - $  {{ product.price}}
+                        </dt>
+                    </div>
                 </div>
             </div>
         </div>

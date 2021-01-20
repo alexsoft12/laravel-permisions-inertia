@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Administrar usuarios
+               Users
             </h2>
         </template>
 
@@ -12,6 +12,13 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <!-- This example requires Tailwind CSS v2.0+ -->
                     <div class="flex flex-col">
+
+                        <div class="py-2 text-right align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <a href="#" class="inline-block bg-blue-500 hover:bg-blue-700 p-2 rounded text-white"
+                               @click="addUser">
+                                New user
+                            </a>
+                        </div>
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -54,7 +61,6 @@
 
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                roles
                                                 <span v-for="role in user.roles" :key="role.id">
                                                    {{ role.name }}
                                                </span>
@@ -83,21 +89,21 @@
                 </template>
 
                 <template #content>
-                    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                    <div class="w-full mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                         <div>
                             <jet-label for="name" value="Name"/>
-                            <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required
+                            <jet-input id="name" type="text" class="mt-1 block w-3/4" v-model="form.name" required
                                        autofocus autocomplete="name"/>
                             <jet-input-error :message="form.errors.name" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <jet-label for="email" value="Email"/>
-                            <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required/>
+                            <jet-input id="email" type="email" class="mt-1 block w-3/4" v-model="form.email" required/>
                             <jet-input-error :message="form.errors.email" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <jet-label for="password" value="Password"/>
-                            <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password"
+                            <jet-input id="password" type="password" class="mt-1 block w-3/4" v-model="form.password"
                                         autocomplete="new-password"/>
                             <jet-input-error :message="form.errors.password" class="mt-2"/>
                         </div>
@@ -105,7 +111,7 @@
                         <div class="mt-4">
 
                             <jet-label for="password_confirmation" value="Confirm Password"/>
-                            <jet-input id="password_confirmation" type="password" class="mt-1 block w-full"
+                            <jet-input id="password_confirmation" type="password" class="mt-1 block w-3/4"
                                        v-model="form.password_confirmation"  autocomplete="new-password"/>
                             <jet-input-error :message="form.errors.password_confirmation" class="mt-2" />
                         </div>
@@ -113,7 +119,7 @@
                         <div class="mt-4">
 
                             <label for="role_id">Role</label>
-                            <select v-model="form.role_id" id="role_id" class="mt-1 block w-full">
+                            <select v-model="form.role_id" id="role_id" class="mt-1 block w-3/4">
                                 <option v-for="role in roles" :value="role.id"> {{ role.name }}</option>
                             </select>
                             <jet-input-error :message="form.errors.role_id" class="mt-2" />
@@ -186,9 +192,14 @@ export default {
             }),
 
             managingUser: null,
+
         }
     },
     methods: {
+        addUser(){
+            this.editMode = false
+            this.managingUser = []
+        },
         editUser(user) {
             this.editMode = true
             this.form.name = user.name
@@ -205,6 +216,13 @@ export default {
             }*/
 
             this.form.put(route('users.update', this.managingUser), {
+                preserveScroll: true,
+                preserveState: true,
+                onSuccess: () => (this.managingUser = null),
+            })
+        },
+        saveUser() {
+            this.form.post(route('users.store'), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => (this.managingUser = null),

@@ -22,31 +22,63 @@
                                     Dashboard
                                 </jet-nav-link>
 
-                                <jet-nav-link :href="route('products.index')" :active="route().current('products.index')"
+                                <jet-nav-link :href="route('products.index')"
+                                              :active="route().current('products.index')"
                                               :roleOrPermission="$page.props.authUser.roles.includes('super-admin') || $page.props.authUser.permissions.includes('module.products')">
                                     Products
                                 </jet-nav-link>
 
-                                <jet-nav-link :href="route('purchases.index')" :active="route().current('purchases')"
+                                <jet-nav-link :href="route('purchases.index')" :active="route().current('purchases.index')"
                                               :roleOrPermission="$page.props.authUser.roles.includes('super-admin')|| $page.props.authUser.permissions.includes('module.purchase')">
                                     Purchases
                                 </jet-nav-link>
 
-                                <jet-nav-link :href="route('reports.index')" :active="route().current('reports')"
+
+                                <jet-nav-link :href="route('reports.index')" :active="route().current('reports.index')"
                                               :roleOrPermission="$page.props.authUser.roles.includes('super-admin') || $page.props.authUser.permissions.includes('module.reports')">
                                     Reports
                                 </jet-nav-link>
 
-                                <jet-nav-link :href="route('users.index')" :active="route().current('users')"
-                                              :roleOrPermission="$page.props.authUser.roles.includes('super-admin') ||$page.props.authUser.permissions.includes('module.users')">
-                                    Manage users
-                                </jet-nav-link>
-
-                                <jet-nav-link :href="route('roles.index')" :active="route().current('roles')"
-                                              :roleOrPermission="$page.props.authUser.roles.includes('super-admin')
+                                <div :class="classes" v-if="$page.props.authUser.roles.includes('super-admin')
                                               ||$page.props.authUser.permissions.includes('module.users')">
-                                    Roles
-                                </jet-nav-link>
+                                    <!-- Teams Dropdown -->
+                                    <jet-dropdown align="left" width="60">
+                                        <template #trigger>
+                                        <span class="inline-flex rounded-md">
+                                            <button type="button"
+                                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                               Manage users
+
+                                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                 viewBox="0 0 20 20" fill="currentColor"
+                                                 aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                          clip-rule="evenodd"/>
+                                            </svg>
+                                            </button>
+                                        </span>
+                                        </template>
+
+                                        <template #content>
+                                            <!-- Account Management -->
+                                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                                Manage users
+                                            </div>
+
+                                            <jet-dropdown-link :as="'link'" :href="route('users.index')">
+                                                Users
+                                            </jet-dropdown-link>
+                                            <jet-dropdown-link :href="route('roles.index')">
+                                                Roles
+                                            </jet-dropdown-link>
+
+
+                                            <div class="border-t border-gray-100"></div>
+                                        </template>
+                                    </jet-dropdown>
+                                </div>
+
 
                             </div>
 
@@ -324,6 +356,7 @@ export default {
     data() {
         return {
             showingNavigationDropdown: false,
+            active: route().current('users.index')|| route().current('roles.index')
         }
     },
 
@@ -339,6 +372,13 @@ export default {
         logout() {
             this.$inertia.post(route('logout'));
         },
-    }
+    },
+    computed: {
+        classes() {
+            return this.active
+                ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
+                : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out'
+        }
+    },
 }
 </script>

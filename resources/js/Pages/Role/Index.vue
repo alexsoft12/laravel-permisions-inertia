@@ -102,7 +102,7 @@
                         Cancel
                     </jet-secondary-button>
 
-                    <jet-button class="ml-2" @click.native="saveUser" v-show="!editMode"
+                    <jet-button class="ml-2" @click.native="saveRole" v-show="!editMode"
                                 :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing">
                         Save
@@ -186,7 +186,7 @@ export default {
             this.openModal()
             this.editMode = false;
         },
-        saveUser() {
+        saveRole() {
             this.form.post(route('roles.store'), {
                 preserveScroll: true,
                 preserveState: true,
